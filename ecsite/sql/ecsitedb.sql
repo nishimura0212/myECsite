@@ -59,6 +59,19 @@ insert into login_user_transaction values
 	(3,"internous3","internous3","guest3",now(),now());
 /* 会員情報テーブル ここまで */
 
+/* 購入商品情報テーブル ここから */
+create table user_buy_item_transaction(
+id int not null primary key auto_increment,
+item_transaction_id int,
+total_price int,
+total_count int,
+user_master_id varchar(16),
+pay varchar(30),
+insert_date datetime,
+delete_date datetime
+);
+/* 購入商品情報テーブル ここまで */
+
 /* 管理者情報テーブル ここから */
 create table login_master_transaction(
 id int not null primary key auto_increment,
@@ -73,16 +86,3 @@ insert into login_master_transaction values
 	(2,"master2","master2","test2",now(),now()),
 	(3,"master3","master3","test3",now(),now());
 /* 管理者情報テーブル ここまで */
-
-/* 購入商品情報テーブル ここから */
-create table user_buy_item_transaction(
-id int not null primary key auto_increment,
-item_transaction_id int,
-total_price int,
-total_count int,
-user_master_id varchar(16),
-pay varchar(30),
-insert_date datetime,
-delete_date datetime
-);
-/* 購入商品情報テーブル ここまで */
