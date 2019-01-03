@@ -18,14 +18,13 @@
 		<div id="header-icon">
 			<ul>
 				<li class="icon">
-					<form method="post" name="form1" action="GoSelectItemAction">
-    				<input type="hidden" name="category" value="1">
-    				<a href="javascript:form1.submit()">前画面に戻る<img src="./img/icon/back.png" width="30px" height="30px"></a>
-					</form>
+					<a href="GoUserAction">
+					会員画面へ戻る<img src="./img/icon/back.png" width="30px" height="30px">
+					</a>
 				</li>
 				<li class="icon">
-					<a href="BuyHistoryAction">
-					購入履歴<img src="./img/icon/History.png" width="30px" height="30px">
+					<a href="LogoutAction">
+					ログアウト<img src="./img/icon/logout.png" width="30px" height="30px">
 					</a>
 				</li>
 			</ul>
@@ -35,50 +34,45 @@
 		<div id="top">
 			<p>商品購入画面</p>
 		</div>
-		<div>
-			<s:if test="errorMessage != ''">
-				<s:property value="errorMessage" />
-			</s:if>
-		</div>
-		<div class="containerA">
-			<s:form action="BuyItemAction" cssClass="flex-container">
-				<p class="left">
-					<img src='<s:property value="itemImage"/>'>
-				</p>
-				<table class="right">
-					<tr>
-						<td class="td-left"><span>商品名</span></td>
-						<td class="td-right"><s:property value="#session.buyItem_name" /><br></td>
-					</tr>
-					<tr>
-						<td class="td-left"><span>値段</span></td>
-						<td class="td-right"><s:property value="#session.buyItem_price" /> <span>円</span>
-						</td>
-					</tr>
-					<tr>
-						<td class="td-left"><span>購入個数</span></td>
-						<td class="td-right"><select name="count" class="select">
-								<option value="1" selected="selected">1</option>
-								<option value="2">2</option>
-								<option value="3">3</option>
-								<option value="4">4</option>
-								<option value="5">5</option>
-						</select></td>
-					</tr>
-					<tr>
-						<td class="td-left"><span>支払い方法</span></td>
-						<td class="td-right"><input type="radio" name="pay" value="1" checked="checked">現金払い
-							 <br><input type="radio" name="pay"value="2">クレジットカード</td>
-					</tr>
-					<s:submit value="購入する" cssClass="single_btn" align="center"/>
-				</table>
-			</s:form>
-		</div>
+		<p class="comment">
+		以下の商品を購入します<br>
+		お支払い方法を選択し「購入する」ボタンを押してください</p>
+		<table class="history-table">
+			<tr>
+				<th></th>
+				<th>商品名</th>
+				<th>値段</th>
+				<th>購入個数</th>
+				<th>購入日</th>
+				<th>削除</th>
+			</tr>
+			<s:iterator value="cartList">
+				<tr>
+					<td class="td-img"><img
+						src='<s:property value="itemImage"/>' class="buy-item-image"></td>
+					<td><s:property value="item" /></td>
+					<td><s:property value="totalPrice" /><span>円</span></td>
+					<td><s:property value="totalCount" /><span>個</span></td>
+					<td><s:property value="insert_date" /></td>
+					<td><input type="checkbox" name="delete"
+						value='<s:property value="id"/>' /></td>
+				</tr>
+			</s:iterator>
+		</table>
+		<s:form action="BuyItemAction">
+			<div class="pay-method">
+				<h4>お支払い方法</h4>
+				<input type="radio" name="pay" value="1" checked="checked" class="radio">現金払い
+				<br><input type="radio" name="pay"value="2" class="radio">クレジットカード
+			</div>
+			<div class="single">
+				<button type="submit" class="single_btn">購入する</button>
+			</div>
+		</s:form>
 	</div>
 	<div id="footer">
 		<p>copyright &copy; internous | ECsite is one which provides A to Z about programming<br/>
 		<a href = '<s:url action="AdminAction"/>'>管理者</a></p>
 	</div>
-
 </body>
 </html>

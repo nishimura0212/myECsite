@@ -16,13 +16,13 @@ public class BuyItemConfirmAction extends ActionSupport implements SessionAware 
 	public String execute() throws SQLException {
 		String result = SUCCESS;
 
-		buyItemCompleteDAO.buyItemInfo(
-				session.get("id").toString(),
-				session.get("login_user_id").toString(),
-				session.get("total_price").toString(),
-				session.get("count").toString(),
-				session.get("pay").toString()
-				);
+//		buyItemCompleteDAO.buyItemInfo(
+//				session.get("id").toString(),
+//				session.get("login_user_id").toString(),
+//				session.get("total_price").toString(),
+//				session.get("count").toString(),
+//				session.get("pay").toString()
+//				);
 
 		int intCount = Integer.parseInt(session.get("count").toString());
 		int intStock = Integer.parseInt(session.get("buyItem_stock").toString());

@@ -1,2 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.internousdev.ecsite.dao.CartDAO"/>
+<fullyQualifiedTypeName name="java.sql.SQLException"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="com.internousdev.ecsite.dto.CartDTO"/>
+<fullyQualifiedTypeName name="com.internousdev.ecsite.dao.BuyItemCompleteDAO"/>
+</qualifiedTypeNameHistroy>

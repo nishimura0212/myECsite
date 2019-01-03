@@ -15,11 +15,11 @@ public class CartDAO {
 
 	public ArrayList<CartDTO> getCartInfo(String user_master_id) throws SQLException {
 		ArrayList<CartDTO> cartDTO = new ArrayList<CartDTO>();
-		String sql ="SELECT ubit.id, iit.item_name, iit.item_image, ubit.total_price, ubit.total_count, ubit.insert_date"
-				+ " FROM user_buy_item_transaction ubit"
-				+ " LEFT JOIN item_info_transaction iit"
-				+ " ON ubit.item_transaction_id = iit.id"
-				+ " WHERE ubit.user_master_id = ?"
+		String sql ="SELECT cit.id, cit.item_transaction_id, iit.item_name, iit.item_stock, iit.item_image, cit.total_price, cit.total_count, cit.insert_date"
+				+ " FROM cart_item_transaction as cit"
+				+ " LEFT JOIN item_info_transaction as iit"
+				+ " ON cit.item_transaction_id = iit.id"
+				+ " WHERE cit.user_master_id = ?"
 				+ " ORDER BY insert_date DESC";
 		try{
 			PreparedStatement ps = con.prepareStatement(sql);
@@ -28,11 +28,13 @@ public class CartDAO {
 
 			while(rs.next()) {
 				CartDTO dto = new CartDTO();
-				dto.setId(rs.getString("id"));
-				dto.setItemImage(rs.getString("item_image"));
+				dto.setId(rs.getInt("id"));
+				dto.setItemTransactionId(rs.getInt("item_transaction_id"));
 				dto.setItem(rs.getString("item_name"));
-				dto.setTotalPrice(rs.getString("total_price"));
-				dto.setTotalCount(rs.getString("total_count"));
+				dto.setItemStock(rs.getInt("item_stock"));
+				dto.setItemImage(rs.getString("item_image"));
+				dto.setTotalPrice(rs.getInt("total_price"));
+				dto.setTotalCount(rs.getInt("total_count"));
 				dto.setInsert_date(rs.getString("insert_date"));
 				cartDTO.add(dto);
 			}

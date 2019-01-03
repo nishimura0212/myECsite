@@ -59,6 +59,18 @@ insert into login_user_transaction values
 	(3,"internous3","internous3","guest3",now(),now());
 /* 会員情報テーブル ここまで */
 
+/* カート情報テーブル ここから */
+create table cart_item_transaction(
+id int not null primary key auto_increment,
+item_transaction_id int,
+total_price int,
+total_count int,
+user_master_id varchar(16),
+insert_date datetime,
+delete_date datetime
+);
+/* カート情報テーブル ここまで */
+
 /* 購入商品情報テーブル ここから */
 create table user_buy_item_transaction(
 id int not null primary key auto_increment,

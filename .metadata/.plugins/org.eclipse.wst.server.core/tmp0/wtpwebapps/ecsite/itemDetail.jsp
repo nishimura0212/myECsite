@@ -9,7 +9,7 @@
 <meta http-equiv="imagetoolbar" content="no"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
-<title>商品購入画面</title>
+<title>商品詳細画面</title>
 <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
@@ -33,7 +33,7 @@
 	</div>
 	<div id="main">
 		<div id="top">
-			<p>商品購入画面</p>
+			<p>商品詳細画面</p>
 		</div>
 		<div>
 			<s:if test="errorMessage != ''">

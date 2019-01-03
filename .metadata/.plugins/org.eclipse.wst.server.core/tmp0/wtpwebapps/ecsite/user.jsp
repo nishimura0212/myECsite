@@ -36,7 +36,7 @@
 		</div>
 		<div class="main-text">
 			<s:form action="GoSelectCategoryAction">
-				<button type="submit" class="userButton">商品購入</button>
+				<button type="submit" class="userButton">商品一覧</button>
 			</s:form>
 			<s:form action="CartAction">
 				<button type="submit" class="userButton">カート</button>

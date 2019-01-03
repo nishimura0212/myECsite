@@ -19,7 +19,7 @@
 			<ul>
 				<li class="icon">
 					<a href="GoUserAction">
-					前画面へ戻る<img src="./img/icon/back.png" width="30px" height="30px">
+					会員画面へ戻る<img src="./img/icon/back.png" width="30px" height="30px">
 					</a>
 				</li>
 				<li class="icon">
@@ -58,7 +58,7 @@
 								<td><s:property value="item" /></td>
 								<td><s:property value="totalPrice" /><span>円</span></td>
 								<td><s:property value="totalCount" /><span>個</span></td>
-								<td><s:property value="payment" /></td>
+								<td><s:property value="pay" /></td>
 								<td><s:property value="insert_date" /></td>
 								<td><input type="checkbox" name="delete"
 									value='<s:property value="id"/>' /></td>

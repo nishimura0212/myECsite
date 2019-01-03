@@ -24,13 +24,7 @@
 	<result name="success">user.jsp</result>
 	</action>
 
-<!-- カート機能 -->
-	<action name="CartAction" class="com.internousdev.ecsite.action.CartAction" method="execute">
-	<result name="success">cart.jsp</result>
-	<result name="error">error.jsp</result>
-	</action>
-
-<!-- 商品購入機能 -->
+<!-- 商品一覧機能 -->
 	<action name="GoSelectCategoryAction" class="com.internousdev.ecsite.action.GoSelectCategoryAction" method="execute">
 	<result name="success">selectCategory.jsp</result>
 	</action>
@@ -44,11 +38,19 @@
 	<result name="success">throwCart.jsp</result>
 	<result name="error">error.jsp</result>
 	</action>
-	<action name="BuyItemAction" class="com.internousdev.ecsite.action.BuyItemAction" method="execute">
-	<result name="success">buyItemConfirm.jsp</result>
-	<result name="error">buyItem.jsp</result>
+
+<!-- カート機能 -->
+	<action name="CartAction" class="com.internousdev.ecsite.action.CartAction" method="execute">
+	<result name="success">cart.jsp</result>
+	<result name="error">error.jsp</result>
 	</action>
-	<action name="BuyItemConfirmAction" class="com.internousdev.ecsite.action.BuyItemConfirmAction" method="execute">
+
+<!-- 商品購入機能 -->
+	<action name="GoBuyItemAction" class="com.internousdev.ecsite.action.GoBuyItemAction" method="execute">
+	<result name="success">buyItem.jsp</result>
+	<result name="error">error.jsp</result>
+	</action>
+	<action name="BuyItemAction" class="com.internousdev.ecsite.action.BuyItemAction" method="execute">
 	<result name="success">buyItemComplete.jsp</result>
 	</action>
 

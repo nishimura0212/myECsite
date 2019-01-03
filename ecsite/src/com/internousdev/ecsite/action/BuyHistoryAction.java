@@ -34,21 +34,10 @@ public class BuyHistoryAction extends ActionSupport implements SessionAware {
 	public void setSession(Map<String, Object> session) {
 		this.session = session;
 	}
-
-	public BuyHistoryDAO getBuyHistoryDAO() {
-		return buyHistoryDAO;
-	}
-
-	public void setBuyHistoryDAO(BuyHistoryDAO buyHistoryDAO) {
-		this.buyHistoryDAO = buyHistoryDAO;
-	}
-
 	public ArrayList<BuyHistoryDTO> getBuyHistoryList() {
 		return buyHistoryList;
 	}
 	public void setMyBuyHistoryList(ArrayList<BuyHistoryDTO> buyHistoryList) {
 		this.buyHistoryList = buyHistoryList;
 	}
-
-
 }

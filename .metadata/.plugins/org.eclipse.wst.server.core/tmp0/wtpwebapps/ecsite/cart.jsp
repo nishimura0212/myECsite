@@ -19,7 +19,7 @@
 			<ul>
 				<li class="icon">
 					<a href="GoUserAction">
-					前画面へ戻る<img src="./img/icon/back.png" width="30px" height="30px">
+					会員画面へ戻る<img src="./img/icon/back.png" width="30px" height="30px">
 					</a>
 				</li>
 				<li class="icon">
@@ -67,6 +67,11 @@
 					<div class="single">
 						<button type="submit" class="gray_btn">削除</button>
 					</div>
+				</s:form>
+				<s:form action="GoBuyItemAction">
+				<div class="single">
+					<button type="submit" class="single_btn">購入する</button>
+				</div>
 				</s:form>
 			</s:elseif>
 		</div>
