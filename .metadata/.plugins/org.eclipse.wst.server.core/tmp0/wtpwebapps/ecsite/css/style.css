@@ -348,6 +348,21 @@ input[type="password"]:focus {
 	border-radius: 5px;
 }
 
+/* 新規会員登録確認画面 */
+.center-new{
+	margin: 0 auto;
+	margin-top: 20px;
+	width: 300px;
+	height: 100px;
+	text-align: center;
+	font-size: 20px;
+	border-collapse: collapse;
+}
+
+
+
+
+
 
 
 

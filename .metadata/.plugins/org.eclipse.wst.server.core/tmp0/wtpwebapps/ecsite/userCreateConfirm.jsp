@@ -9,57 +9,47 @@
 <meta http-equiv="imagetoolbar" content="no"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
-<title>UserCreateConfirm画面</title>
+<title>新規会員登録確認画面</title>
 <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
 	<div id="header">
-		<img src="./img/lawson02.png"/>
+		<p>LOWSAN</p>
+		<div id="header-icon">
+			<ul>
+				<li class="icon">
+					<a href="UserCreateAction">
+					前画面に戻る<img src="./img/icon/back.png" width="30px" height="30px">
+					</a>
+				</li>
+			</ul>
+		</div>
 	</div>
 	<div id="main">
 		<div id="top">
-			<p>UserCreateConfirm</p>
+			<p>新規会員登録確認画面</p>
 		</div>
 		<div>
-			<h3>登録する内容は以下でよろしいですか。</h3>
-			<table>
+			<div class="comment">登録する内容は以下でよろしいですか。</div>
 				<s:form action="UserCreateCompleteAction">
-					<tr id="box">
-						<td>
-						<label>ユーザーID：</label>
-						</td>
-						<td>
-						<s:property value="loginUserId" escape="false"/>
-						</td>
-					</tr>
-					<tr id="box">
-						<td>
-						<label>パスワード：</label>
-						</td>
-						<td>
-						<s:property value="loginPassword" escape="false"/>
-						</td>
-					</tr>
-					<tr id="box">
-						<td>
-						<label>ユーザー名：</label>
-						</td>
-						<td>
-						<s:property value="userName" escape="false"/>
-						</td>
-					</tr>
-					<tr>
-						<td>
-						<s:submit value="登録"/>
-						</td>
-					</tr>
+					<table class="center-new">
+						<tr>
+							<td class="td-left"><label>ユーザーID</label></td>
+							<td class="td-right"><s:property value="loginUserId" escape="false" /></td>
+						</tr>
+						<tr>
+							<td class="td-left"><label>パスワード</label></td>
+							<td class="td-right"><s:property value="loginPassword" escape="false" /></td>
+						</tr>
+						<tr>
+							<td class="td-left"><label>ユーザー名</label></td>
+							<td class="td-right"><s:property value="userName" escape="false" /></td>
+						</tr>
+					</table>
+					<div class="single">
+						<input type="button" value="登録" class="single_btn" />
+					</div>
 				</s:form>
-				</table>
-				<div>
-					<s:form action="UserCreateAction" cssClass="text-right">
-						<s:submit value="戻る"/>
-					</s:form>
-				</div>
 		</div>
 	</div>
 	<div id="footer">
